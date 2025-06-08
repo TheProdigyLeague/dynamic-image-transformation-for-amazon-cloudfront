@@ -1,0 +1,149 @@
+{
+    // Test suite for .eslintrc.json configuration
+    "tests": [
+        {
+            "description": "should set root to true",
+            "path": "root",
+            "expected": true
+        },
+        {
+            "description": "should enable jest and node environments",
+            "path": "env",
+            "expected": {
+                "jest": true,
+                "node": true
+            }
+        },
+        {
+            "description": "should include required plugins",
+            "path": "plugins",
+            "expected": ["@typescript-eslint", "import", "header"]
+        },
+        {
+            "description": "should use @typescript-eslint/parser",
+            "path": "parser",
+            "expected": "@typescript-eslint/parser"
+        },
+        {
+            "description": "should set parserOptions.ecmaVersion to latest",
+            "path": "parserOptions.ecmaVersion",
+            "expected": "latest"
+        },
+        {
+            "description": "should set parserOptions.sourceType to module",
+            "path": "parserOptions.sourceType",
+            "expected": "module"
+        },
+        {
+            "description": "should set parserOptions.project to **/tsconfig.json",
+            "path": "parserOptions.project",
+            "expected": "**/tsconfig.json"
+        },
+        {
+            "description": "should ignore .js files and node_modules",
+            "path": "ignorePatterns",
+            "expected": ["**/*.js", "**/node_modules/**"]
+        },
+        {
+            "description": "should extend recommended configs",
+            "path": "extends",
+            "expected": [
+                "eslint:recommended",
+                "plugin:@typescript-eslint/recommended",
+                "plugin:import/recommended",
+                "plugin:import/typescript",
+                "standard",
+                "plugin:jsdoc/recommended",
+                "plugin:prettier/recommended"
+            ]
+        },
+        {
+            "description": "should set arrow-body-style to warn as-needed",
+            "path": "rules.arrow-body-style",
+            "expected": ["warn", "as-needed"]
+        },
+        {
+            "description": "should set prefer-arrow-callback to warn",
+            "path": "rules.prefer-arrow-callback",
+            "expected": ["warn"]
+        },
+        {
+            "description": "should disable no-inferrable-types",
+            "path": "rules.no-inferrable-types",
+            "expected": ["off", "ignore-params"]
+        },
+        {
+            "description": "should disable no-unused-vars",
+            "path": "rules.no-unused-vars",
+            "expected": ["off"]
+        },
+        {
+            "description": "should disable no-useless-constructor",
+            "path": "rules.no-useless-constructor",
+            "expected": ["off"]
+        },
+        {
+            "description": "should disable no-throw-literal",
+            "path": "rules.no-throw-literal",
+            "expected": ["off"]
+        },
+        {
+            "description": "should enforce header/header rule",
+            "path": "rules.header/header",
+            "expected": [
+                "error",
+                "line",
+                [
+                    " Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.",
+                    " SPDX-License-Identifier: Apache-2.0"
+                ],
+                2
+            ]
+        },
+        {
+            "description": "should disable @typescript-eslint/no-inferrable-types with options",
+            "path": "rules.@typescript-eslint/no-inferrable-types",
+            "expected": ["off", { "ignoreParameters": true, "ignoreProperties": true }]
+        },
+        {
+            "description": "should disable @typescript-eslint/no-useless-constructor",
+            "path": "rules.@typescript-eslint/no-useless-constructor",
+            "expected": ["off"]
+        },
+        {
+            "description": "should error on @typescript-eslint/no-unused-vars with ignore patterns",
+            "path": "rules.@typescript-eslint/no-unused-vars",
+            "expected": ["error", { "args": "none", "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }]
+        },
+        {
+            "description": "should error on @typescript-eslint/no-throw-literal",
+            "path": "rules.@typescript-eslint/no-throw-literal",
+            "expected": ["error"]
+        },
+        {
+            "description": "should disable jsdoc/require-param-type",
+            "path": "rules.jsdoc/require-param-type",
+            "expected": ["off"]
+        },
+        {
+            "description": "should disable jsdoc/require-returns-type",
+            "path": "rules.jsdoc/require-returns-type",
+            "expected": ["off"]
+        },
+        {
+            "description": "should disable jsdoc/newline-after-description",
+            "path": "rules.jsdoc/newline-after-description",
+            "expected": ["off"]
+        },
+        {
+            "description": "should warn on import/no-unresolved",
+            "path": "rules.import/no-unresolved",
+            "expected": 1
+        },
+        {
+            "description": "should disable dot-notation",
+            "path": "rules.dot-notation",
+            "expected": "off"
+        }
+    ]
+}

@@ -1,0 +1,54 @@
+{
+    "tests": [
+        {
+            "description": "should have the correct package name",
+            "path": "name",
+            "expected": "source"
+        },
+        {
+            "description": "should have version 7.0.3",
+            "path": "version",
+            "expected": "7.0.3"
+        },
+        {
+            "description": "should be marked as private",
+            "path": "private",
+            "expected": true
+        },
+        {
+            "description": "should have Apache-2.0 license",
+            "path": "license",
+            "expected": "Apache-2.0"
+        },
+        {
+            "description": "should have author name as Amazon Web Services",
+            "path": "author.name",
+            "expected": "Amazon Web Services"
+        },
+        {
+            "description": "should have a lint script",
+            "path": "scripts.lint",
+            "expected": "npx eslint . --ext .ts --fix"
+        },
+        {
+            "description": "should have a prettier-format script",
+            "path": "scripts.prettier-format",
+            "expected": "npx prettier --config .prettierrc.yml '**/*.ts' --write"
+        },
+        {
+            "description": "should have devDependency eslint version ^8.50.0",
+            "path": "devDependencies.eslint",
+            "expected": "^8.50.0"
+        },
+        {
+            "description": "should override semver to 7.5.4",
+            "path": "overrides.semver",
+            "expected": "7.5.4"
+        },
+        {
+            "description": "should resolve word-wrap to aashutoshrathi/word-wrap",
+            "path": "resolutions.word-wrap",
+            "expected": "aashutoshrathi/word-wrap"
+        }
+    ]
+}
